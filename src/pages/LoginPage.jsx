@@ -11,7 +11,6 @@ export const LoginPage = () => {
 
   return (
     <div className="min-h-screen w-full flex flex-col relative">
-      {/* Fondo con imagen y degradado */}
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full bg-[url(/background.png)] bg-cover bg-center absolute inset-0" />
         <div
@@ -23,14 +22,12 @@ export const LoginPage = () => {
         />
       </div>
 
-      {/* Logo */}
       <img
         src="/metro-logo.jpg"
         alt="Logo"
         className="h-16 w-16 rounded-lg mt-[6px] ml-[6px] absolute top-0 left-0 z-10"
       />
 
-      {/* Títulos */}
       <div className="flex flex-col items-center relative top-6 z-10">
         <p className="block text-5xl text-white font-normal opacity-80">
           BIENVENIDO
@@ -40,11 +37,8 @@ export const LoginPage = () => {
         </p>
       </div>
 
-      {/* Contenido */}
-      <div className="flex flex-col items-center justify-center flex-grow z-10">
-        {/* Formulario */}
+      <div className="flex flex-col items-start justify-center flex-grow z-10 pl-16">
         <div className="w-full max-w-md px-4">
-          {/* Email */}
           <div className="mb-6">
             <label className="block text-white text-xl font-bold mb-3 text-left">
               Correo electrónico:
@@ -56,7 +50,6 @@ export const LoginPage = () => {
             />
           </div>
 
-          {/* Contraseña con botón de visibilidad */}
           <div className="relative mb-8">
             <label className="block text-white text-xl font-bold mb-3 text-left">
               Contraseña:
@@ -64,7 +57,7 @@ export const LoginPage = () => {
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Ingrese su contraseña"
-              className="w-full px-4 py-2 bg-black border border-emerald-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-emerald-700"
+              className="w-full px-4 py-2 bg-black border border-emerald-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-emerald-700 pr-12"
             />
             <button
               type="button"
@@ -103,7 +96,6 @@ export const LoginPage = () => {
             </button>
           </div>
 
-          {/* Botón INGRESAR */}
           <div className="flex justify-center mb-8">
             <button
               className="px-8 py-3 bg-emerald-700 hover:bg-emerald-800 rounded-lg font-bold text-white uppercase tracking-wide transition-colors shadow-lg"
@@ -113,7 +105,6 @@ export const LoginPage = () => {
             </button>
           </div>
 
-          {/* Enlace de registro */}
           <div className="flex justify-center items-center gap-2 text-white">
             <span>¿No tiene cuenta?</span>
             <Link
