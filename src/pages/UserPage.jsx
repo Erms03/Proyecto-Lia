@@ -208,10 +208,10 @@ export const UserPage = () => {
 
           {/* Saldo disponible */}
           <div className="bg-black bg-opacity-90 p-6 rounded-lg mb-6">
-            <p className="text-xl text-white mb-2 text-center">
+            <p className="text-xl text-white mb-2 sm:text-center lg:text-start">
               Saldo disponible:
             </p>
-            <p className="text-4xl text-emerald-400 font-bold text-center">
+            <p className="text-4xl text-emerald-400 font-bold sm:text-center lg:text-start">
               $
               {userData.balance.toLocaleString("es-MX", {
                 minimumFractionDigits: 2,
