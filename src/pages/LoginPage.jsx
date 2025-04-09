@@ -25,20 +25,20 @@ export const LoginPage = () => {
       <img
         src="/metro-logo.jpg"
         alt="Logo"
-        className="md:h-16 md:w-16 rounded-lg mt-[6px] ml-[6px] absolute top-0 left-0 z-10 sm:w-11 sm:h-11"
+        className="lg:h-16 lg:w-16 rounded-lg mt-[6px] ml-[6px] absolute top-0 left-0 z-10 sm:w-11 sm:h-11"
       />
 
-      <div className="flex flex-col items-center relative md:top-6 z-10 sm:top-24">
-        <p className="block md:text-5xl text-white font-normal opacity-80 sm:text-3xl">
+      <div className="flex flex-col items-center relative lg:top-6 z-10 sm:top-24">
+        <p className="block lg:text-5xl text-white font-normal opacity-80 sm:text-3xl">
           BIENVENIDO
         </p>
-        <p className="block md:text-5xl text-white font-bold mt-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)] sm:text-2xl">
+        <p className="block lg:text-5xl text-white font-bold mt-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)] sm:text-2xl">
           AL BANCO METROPOLITANO
         </p>
       </div>
 
-      <div className="flex flex-col items-start justify-center flex-grow z-10 md:pl-16 md:mt-24 sm:p-2 sm:mt-12">
-        <div className="w-full max-w-md px-4 sm:flex sm:flex-col sm:gap-3">
+      <div className="flex flex-col items-start justify-center flex-grow z-10 lg:pl-16 lg:mt-24 sm:p-2 sm:mt-12">
+        <div className="w-full max-w-lg px-4 sm:flex sm:flex-col sm:gap-3">
           <div className="mb-6">
             <label className="block text-white text-xl font-bold mb-3 text-left">
               Correo electrónico:
@@ -61,7 +61,7 @@ export const LoginPage = () => {
             />
             <button
               type="button"
-              className="absolute right-2 top-11 h-8 w-8 flex items-center justify-center bg-emerald-700 hover:bg-emerald-600 rounded-md transition-colors"
+              className="absolute right-2 top-11 h-8 w-8 flex items-center justify-center bg-emerald-700 hover:bg-emerald-600 rounded-lg transition-colors"
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? (

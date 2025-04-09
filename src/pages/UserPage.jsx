@@ -77,11 +77,11 @@ export const UserPage = () => {
       <img
         src="/metro-logo.jpg"
         alt="Logo"
-        className="h-16 w-16 rounded-lg mt-[6px] ml-[6px] absolute top-0 left-0 z-10"
+        className="lg:h-16 lg:w-16 rounded-lg mt-[6px] ml-[6px] absolute top-0 left-0 z-10 sm:h-11 sm:w-11"
       />
 
       {/* Menú de navegación superior derecho */}
-      <div className="absolute top-4 right-4 z-20">
+      <div className="absolute top-4 right-4 z-20 lg:visible sm:invisible">
         <nav className="flex space-x-6">
           <Link
             to="/user"
@@ -119,7 +119,7 @@ export const UserPage = () => {
       {/* Botón para abrir/cerrar menú lateral */}
       <button
         onClick={toggleMenu}
-        className="fixed left-4 top-1/2 transform -translate-y-1/2 z-30 bg-emerald-700 hover:bg-emerald-600 text-white p-3 rounded-r-lg shadow-lg transition-all"
+        className="fixed lg:left-4 sm:left-0 top-1/2 transform -translate-y-1/2 z-30 bg-emerald-700 hover:bg-emerald-600 text-white p-3 rounded-r-lg shadow-lg transition-all"
         style={{ top: "calc(50% + 100px)" }}
       >
         {isMenuOpen ? (
@@ -192,12 +192,12 @@ export const UserPage = () => {
       </div>
 
       {/* Contenido principal */}
-      <div className="flex-grow flex flex-col items-center justify-center z-10">
+      <div className="flex-grow flex flex-col items-center justify-center z-10 sm:m-6">
         <div className="bg-black bg-opacity-80 p-8 rounded-lg w-full max-w-2xl">
           {/* Mensaje de bienvenida */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl text-white font-bold">
-              ¡Bienvenido,{" "}
+            <h1 className="lg:text-4xl sm:text-3xl text-white font-bold">
+              ¡Bienvenid@,{" "}
               <span className="text-emerald-400">{userData.name}</span>!
             </h1>
             <p className="text-white mt-2">
@@ -208,8 +208,10 @@ export const UserPage = () => {
 
           {/* Saldo disponible */}
           <div className="bg-black bg-opacity-90 p-6 rounded-lg mb-6">
-            <p className="text-xl text-white mb-2">Saldo disponible:</p>
-            <p className="text-4xl text-emerald-400 font-bold">
+            <p className="text-xl text-white mb-2 text-center">
+              Saldo disponible:
+            </p>
+            <p className="text-4xl text-emerald-400 font-bold text-center">
               $
               {userData.balance.toLocaleString("es-MX", {
                 minimumFractionDigits: 2,

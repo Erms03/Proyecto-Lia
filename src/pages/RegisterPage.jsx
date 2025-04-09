@@ -31,12 +31,12 @@ export const RegisterPage = () => {
       <img
         src="/metro-logo.jpg"
         alt="Logo"
-        className="h-16 w-16 rounded-lg mt-[6px] ml-[6px] absolute top-0 left-0 z-10"
+        className="lg:h-16 lg:w-16 rounded-lg mt-[6px] ml-[6px] absolute top-0 left-0 z-10 sm:h-12 sm:w-12"
       />
 
       {/* Título del banco */}
-      <div className="flex flex-col items-center relative top-6 z-10">
-        <p className="block text-5xl text-white font-bold mt-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
+      <div className="flex flex-col items-center relative lg:top-6 z-10 sm:top-24">
+        <p className="block lg:text-5xl sm:text-2xl text-white font-bold mt-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
           BANCO METROPOLITANO
         </p>
       </div>
@@ -45,7 +45,7 @@ export const RegisterPage = () => {
       <div className="flex flex-col items-center justify-center flex-grow z-10 px-4">
         <form onSubmit={handleSubmit} className="w-full max-w-md">
           {/* Título con transparenc  ia 80% */}
-          <h2 className="text-3xl text-white text-center mb-6 font-bold [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)] opacity-80">
+          <h2 className="lg:text-3xl sm:text-2xl text-white text-center mb-6 font-bold [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)] opacity-80">
             CREAR CUENTA
           </h2>
 
@@ -58,6 +58,7 @@ export const RegisterPage = () => {
               <input
                 type="text"
                 className="w-full px-4 py-2 bg-black border border-emerald-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                placeholder="Nombre"
                 required
               />
             </div>
@@ -69,6 +70,7 @@ export const RegisterPage = () => {
               <input
                 type="email"
                 className="w-full px-4 py-2 bg-black border border-emerald-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                placeholder="ejemplo@bancometropolitano.com"
                 required
               />
             </div>
@@ -80,6 +82,7 @@ export const RegisterPage = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 className="w-full px-4 py-2 bg-black border border-emerald-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-emerald-700 pr-12"
+                placeholder="Ingrese su contraseña"
                 required
               />
               <button
@@ -126,6 +129,7 @@ export const RegisterPage = () => {
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 className="w-full px-4 py-2 bg-black border border-emerald-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-emerald-700 pr-12"
+                placeholder="Confirmar su contraseña"
                 required
               />
               <button
@@ -177,8 +181,8 @@ export const RegisterPage = () => {
             </div>
 
             {/* Enlace para regresar a autenticación */}
-            <div className="flex justify-center items-center gap-2 text-white">
-              <span className="inline mr-10 text-white">
+            <div className="flex justify-center items-center text-white gap-2">
+              <span className="inline text-white">
                 ¿Ya tienes una cuenta?
               </span>
               <Link
