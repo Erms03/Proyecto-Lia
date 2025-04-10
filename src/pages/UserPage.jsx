@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 export const UserPage = () => {
   const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [userData, setUserData] = useState({
     name: "María González",
     lastAccess: new Date().toLocaleString("es-ES", {
@@ -89,6 +88,26 @@ export const UserPage = () => {
           >
             Inicio
           </Link>
+
+          <div className="relative group">
+            <p className="text-white group-hover:text-emerald-400 font-medium transition-colors cursor-pointer relative">
+              Operaciones
+            </p>
+            <div className="hidden bg-white text-back absolute top-6 -left-2 w-28 group-hover:block cursor-pointer font-medium rounded-sm overflow-hidden">
+              <ul>
+                <li className="p-2 hover:bg-emerald-400 transition-all">
+                  Actualizar datos
+                </li>
+                <li className="p-2 hover:bg-emerald-400 transition-all">
+                  Enviar quejas/sugerencias
+                </li>
+                <li className="p-2 hover:bg-emerald-400 transition-all">
+                  Transferir Dinero
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <Link
             to="/transactions"
             className="text-white hover:text-emerald-400 font-medium transition-colors"
@@ -114,81 +133,6 @@ export const UserPage = () => {
             Salir
           </button>
         </nav>
-      </div>
-
-      {/* Botón para abrir/cerrar menú lateral */}
-      <button
-        onClick={toggleMenu}
-        className="fixed lg:left-4 sm:left-0 top-1/2 transform -translate-y-1/2 z-30 bg-emerald-700 hover:bg-emerald-600 text-white p-3 rounded-r-lg shadow-lg transition-all"
-        style={{ top: "calc(50% + 100px)" }}
-      >
-        {isMenuOpen ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        )}
-      </button>
-
-      {/* Menú lateral izquierdo */}
-      <div
-        className={`fixed left-0 top-0 h-full w-64 bg-black bg-opacity-90 z-20 transform ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out`}
-      >
-        <div className="p-6">
-          <h2 className="text-2xl text-emerald-400 font-bold mb-8">
-            Menú de Opciones
-          </h2>
-
-          <div className="space-y-4">
-            <Link
-              to="/update-data"
-              className="block w-full bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg transition-colors"
-            >
-              ACTUALIZAR MIS DATOS
-            </Link>
-
-            <Link
-              to="/send-complaints"
-              className="block w-full bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg transition-colors"
-            >
-              ENVIAR QUEJAS/SUGERENCIAS
-            </Link>
-
-            <Link
-              to="/transfer-money"
-              className="block w-full bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg transition-colors"
-            >
-              TRANSFERIR DINERO
-            </Link>
-          </div>
-        </div>
       </div>
 
       {/* Contenido principal */}
