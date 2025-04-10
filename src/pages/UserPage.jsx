@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export const UserPage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
     name: "María González",
@@ -133,6 +134,96 @@ export const UserPage = () => {
             Salir
           </button>
         </nav>
+      </div>
+
+      {/* Botón para abrir/cerrar menú lateral */}
+      <button
+        onClick={toggleMenu}
+        className="fixed right-0 mt-[6px] mr-[6px] z-30 bg-emerald-700 hover:bg-emerald-600 text-white p-3 rounded-lg shadow-lg transition-all sm:visible lg:invisible"
+      >
+        {isMenuOpen ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        )}
+      </button>
+
+      {/* Menú lateral izquierdo */}
+      <div
+        className={`fixed left-0 top-0 h-full w-64 bg-black bg-opacity-90 z-20 transform ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 ease-in-out border-r-2 border-white`}
+      >
+        <div className="p-6">
+          <h2 className="text-2xl text-emerald-400 font-bold mb-8">Menú</h2>
+
+          <div className="space-y-4 text-center mt-16">
+            <Link
+              to="/user"
+              className="block w-full bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg transition-colors"
+            >
+              Inicio
+            </Link>
+
+            <div
+              to="/send-complaints"
+              className="block w-full bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg transition-colors"
+            >
+              Operaciones
+            </div>
+
+            <Link
+              to="/transactions"
+              className="block w-full bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg transition-colors"
+            >
+              Transacciones
+            </Link>
+            <Link
+              to="/complaints"
+              className="block w-full bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg transition-colors"
+            >
+              Quejas
+            </Link>
+            <Link
+              to="/profile"
+              className="block w-full bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg transition-colors"
+            >
+              Perfil
+            </Link>
+            <button
+              onClick={handleLogout}
+              className="block w-full bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg transition-colors cursor-pointer"
+            >
+              Salir
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Contenido principal */}
