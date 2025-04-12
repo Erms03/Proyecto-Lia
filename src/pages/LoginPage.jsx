@@ -64,7 +64,7 @@ export const LoginPage = () => {
               className="absolute right-2 top-11 h-8 w-8 flex items-center justify-center bg-emerald-700 hover:bg-emerald-600 rounded-lg transition-colors"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? (
+              {!showPassword ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -98,7 +98,7 @@ export const LoginPage = () => {
 
           <div className="flex justify-center mb-8">
             <button
-              className="px-8 py-3 bg-emerald-700 hover:bg-emerald-800 rounded-lg font-bold text-white uppercase tracking-wide transition-colors shadow-lg"
+              className="cursor-pointer px-8 py-3 bg-emerald-700 hover:bg-emerald-800 rounded-lg font-bold text-white uppercase tracking-wide transition-colors shadow-lg "
               onClick={handleLogin}
             >
               INGRESAR

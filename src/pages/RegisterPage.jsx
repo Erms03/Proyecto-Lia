@@ -90,7 +90,7 @@ export const RegisterPage = () => {
                 className="absolute right-2 top-9 h-8 w-8 flex items-center justify-center bg-emerald-700 hover:bg-emerald-600 rounded-md transition-colors"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? (
+                {!showPassword ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"
@@ -137,7 +137,7 @@ export const RegisterPage = () => {
                 className="absolute right-2 top-9 h-8 w-8 flex items-center justify-center bg-emerald-700 hover:bg-emerald-600 rounded-md transition-colors"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               >
-                {showConfirmPassword ? (
+                {!showConfirmPassword ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"
@@ -173,7 +173,7 @@ export const RegisterPage = () => {
             <div className="pt-4 flex justify-center">
               <button
                 type="submit"
-                className="w-1/2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-opacity-50 transition duration-200"
+                className="w-1/2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-opacity-50 transition duration-200 cursor-pointer"
                 onSubmit={handleSubmit}
               >
                 CREAR CUENTA
@@ -182,9 +182,7 @@ export const RegisterPage = () => {
 
             {/* Enlace para regresar a autenticación */}
             <div className="flex justify-center items-center text-white gap-2">
-              <span className="inline text-white">
-                ¿Ya tienes una cuenta?
-              </span>
+              <span className="inline text-white">¿Ya tienes una cuenta?</span>
               <Link
                 to="/login" // Ajusta esta ruta según tu configuración
                 className="font-bold text-emerald-400 hover:text-emerald-300 underline transition-colors cursor-pointer"
