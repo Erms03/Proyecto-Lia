@@ -10,7 +10,7 @@ export const LoginPage = () => {
   }
 
   return (
-    <div className="min-h-screen w-full flex flex-col relative">
+    <div className="h-screen w-full flex flex-col relative">
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full bg-[url(/background.png)] bg-cover bg-center absolute inset-0" />
         <div
